@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>3D 이미지를 만들어보자~</title>
+</head>
+<body>
+<style>
+    .container {
+        /*3d 효과를 유지하게 한다*/
+        transform-style: preserve-3d;
+        /* 3d 효과 시작의 기준점*/
+/*        perspective-origin: center top;*/
+        perspective: 800px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .wrapper img{
+        transition-duration: 2s;
+
+    }
+    .wrapper img:hover {
+        transform: rotateX(45deg);
+    }
+
+
+
+</style>
+<div class="container">
+    <div class="wrapper">
+        <img src="injulmi.jpg">
+    </div>
+
+</div>
+
+
+</body>
+</html>

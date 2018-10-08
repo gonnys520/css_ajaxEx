@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<style>
+
+    .container {
+        /*3d 효과를 유지하게 한다*/
+        transform-style: preserve-3d;
+        /* 3d 효과 시작의 기준점*/
+        /*        perspective-origin: center top;*/
+        perspective: 800px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        perspective-origin: 50% 50%;
+    }
+
+    .wrapper img {
+        transition-duration: 2s;
+
+
+
+
+    }
+
+    .move1 {
+        animation: m1;
+        animation-duration: 3s;
+    }
+
+    @keyframes m1 {
+        25%{
+            transform:translate(300px);
+        }
+        50%{
+            transform:rotateY(50deg);
+        }
+        100%{
+            transform:translate(-300px);
+        }
+    }
+
+</style>
+
+<div class="container">
+<div class="wrapper">
+    <img src="injulmi.jpg">
+</div>
+</div>
+<script>
+    document.querySelector("body")
+    .addEventListener("click", () => {
+        document.querySelector(".wrapper")
+            .setAttribute("class", "wrapper move1");
+    },false);
+</script>
+</body>
+</html>

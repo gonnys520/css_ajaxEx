@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible"/>
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width"/>
+    <title>퀴즈맹글기</title>
+    <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+
+</head>
+<body>
+<style>
+    .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+</style>
+<div class="container">
+<div id="demo">
+    <h2>돌려돌려 가익팀~!~!~!~!</h2>
+    <?xml version="1.0" encoding="UTF-8" ?>
+    <button type="button" onclick="loadDoc1()">지인</button>
+    <button type="button" onclick="loadDoc2()">고은</button>
+    <button type="button" onclick="loadDoc3()">가익</button>
+    <button type="button" onclick="loadDoc4()">연훈</button>
+    <button type="button" onclick="loadDoc5()">가영</button>
+</div>
+<br><br>
+<a id="custom-login-btn" href="javascript:loginWithKakao()">
+    <img src="//mud-kage.kakao.com/14/dn/btqbjxsO6vP/KPiGpdnsubSq3a0PHEGUK1/o.jpg" width="300"/>
+</a>
+<script type='text/javascript'>
+    //<![CDATA[
+    // 사용할 앱의 JavaScript 키를 설정해 주세요.
+    Kakao.init('29ec7f8081e932e0cdcd2189f37fc7fa');
+    function loginWithKakao() {
+        // 로그인 창을 띄웁니다.
+        Kakao.Auth.login({
+            success: function(authObj) {
+                alert("로그인 성공");
+            },
+            fail: function(err) {
+                alert("로그인 실패");
+            }
+        });
+    };
+    //]]>
+</script>
+
+
+
+<script>
+    function loadDoc1() {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+
+            console.log(xhttp.readyState)
+            if (xhttp.readyState == 4 && xhttp.status == 200) {
+
+                var text = JSON.parse(this.responseText); //json.parse하면 객체로 바뀜.
+                console.log(text);
+
+            }
+        };
+        xhttp.open("GET", "http://10.10.10.87:8080/jsonEx/quiz", true);
+        xhttp.send();
+    }
+
+    function loadDoc2() {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+
+            console.log(xhttp.readyState)
+            if (xhttp.readyState == 4 && xhttp.status == 200) {
+
+                var text = JSON.parse(this.responseText); //json.parse하면 객체로 바뀜.
+                console.log(text);
+
+            }
+        };
+        xhttp.open("GET", "http://10.10.10.86:8080/jsonEx/quiz", true);
+        xhttp.send();
+    }
+    function loadDoc3() {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+
+            console.log(xhttp.readyState)
+            if (xhttp.readyState == 4 && xhttp.status == 200) {
+
+                var text = JSON.parse(this.responseText); //json.parse하면 객체로 바뀜.
+                console.log(text);
+
+            }
+        };
+        xhttp.open("GET", "http://10.10.10.95:8080/jsonEx/quiz", true);
+        xhttp.send();
+    }
+    function loadDoc4() {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+
+            console.log(xhttp.readyState)
+            if (xhttp.readyState == 4 && xhttp.status == 200) {
+
+                var text = JSON.parse(this.responseText); //json.parse하면 객체로 바뀜.
+                console.log(text);
+
+            }
+        };
+        xhttp.open("GET", "http://10.10.10.96:8080/jsonEx/quiz", true);
+        xhttp.send();
+    }
+    function loadDoc5() {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+
+            console.log(xhttp.readyState)
+            if (xhttp.readyState == 4 && xhttp.status == 200) {
+
+                var text = JSON.parse(this.responseText); //json.parse하면 객체로 바뀜.
+                console.log(text);
+
+            }
+        };
+        xhttp.open("GET", "http://10.10.10.97:8080/jsonEx/quiz", true);
+        xhttp.send();
+    }
+
+
+
+</script>
+
+
+</div>
+</body>
+</html>
